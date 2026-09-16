@@ -1,20 +1,22 @@
-"""
-Ejercicio 2: Calculadora básica
---------------------------------
-1. Pide al usuario dos números (conviértelos a float).
-2. Pide una operación: +, -, *, /
-3. Muestra el resultado con 2 decimales.
-4. Si la operación es "/" y el segundo número es 0, muestra un
-   mensaje de error en lugar de dividir.
+num1 = float(input("Introduce el primer número: "))
+num2 = float(input("Introduce el segundo número: "))
+operacion = input("Introduce la operación (+, -, *, /): ")
 
-Pistas:
-- float(texto) convierte un string a número decimal.
-- Puedes usar if/elif/else para elegir la operación.
-- round(numero, 2) redondea a 2 decimales.
-"""
+if operacion == "+":
+    resultado = num1 + num2
+elif operacion == "-":
+    resultado = num1 - num2
+elif operacion == "*":
+    resultado = num1 * num2
+elif operacion == "/":
+    if num2 == 0:
+        resultado = None
+        print("Error: no se puede dividir entre 0.")
+    else:
+        resultado = num1 / num2
+else:
+    resultado = None
+    print("Operación no válida.")
 
-num1 = None  # TODO: pide el primer número
-num2 = None  # TODO: pide el segundo número
-operacion = None  # TODO: pide la operación (+, -, *, /)
-
-# TODO: calcula el resultado según la operación e imprímelo
+if resultado is not None:
+    print(f"Resultado: {round(resultado, 2)}")

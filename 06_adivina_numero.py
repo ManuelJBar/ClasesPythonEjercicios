@@ -1,22 +1,16 @@
-"""
-Ejercicio 6: Adivina el número
-----------------------------------
-1. Genera un número secreto aleatorio entre 1 y 100 (módulo random).
-2. Usa un bucle while para que el usuario vaya intentando adivinarlo.
-3. En cada intento, dile si el número secreto es "mayor" o "menor"
-   que el que ha introducido.
-4. Cuando acierte, felicítale y muestra cuántos intentos ha necesitado.
-
-Pistas:
-- import random
-- random.randint(1, 100) genera un entero aleatorio entre 1 y 100.
-- Usa una variable "intentos" que sumes 1 en cada vuelta del bucle.
-- El bucle termina cuando el número introducido == número secreto.
-"""
-
 import random
 
-numero_secreto = None  # TODO: genera el número aleatorio
+numero_secreto = random.randint(1, 100)
 intentos = 0
+numero_usuario = None
 
-# TODO: bucle while que pida números hasta acertar
+while numero_usuario != numero_secreto:
+    numero_usuario = int(input("Adivina el número (1-100): "))
+    intentos += 1
+
+    if numero_usuario < numero_secreto:
+        print("El número secreto es mayor.")
+    elif numero_usuario > numero_secreto:
+        print("El número secreto es menor.")
+    else:
+        print(f"¡Enhorabuena! Has acertado en {intentos} intentos.")

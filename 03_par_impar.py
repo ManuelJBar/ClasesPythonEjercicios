@@ -1,20 +1,18 @@
-"""
-Ejercicio 3: Par, impar y positivo/negativo
----------------------------------------------
-1. Pide un número entero al usuario.
-2. Indica si es par o impar (usa el operador módulo %).
-3. Indica además si es positivo, negativo o cero.
+numero = int(input("Introduce un número entero: "))
 
-Ejemplo de salida esperada:
-    "El número -4 es par y negativo."
+if numero % 2 == 0:
+    paridad = "par"
+else:
+    paridad = "impar"
 
-Pistas:
-- numero % 2 == 0 significa que es par.
-- Puedes combinar varias comprobaciones con if/elif/else.
-"""
+if numero > 0:
+    signo = "positivo"
+elif numero < 0:
+    signo = "negativo"
+else:
+    signo = "cero"
 
-numero = None  # TODO: pide el número al usuario (int)
-
-# TODO: comprueba par/impar
-# TODO: comprueba positivo/negativo/cero
-# TODO: imprime el resultado combinado
+if numero == 0:
+    print(f"El número {numero} es {paridad}.")
+else:
+    print(f"El número {numero} es {paridad} y {signo}.")
